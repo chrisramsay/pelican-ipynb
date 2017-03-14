@@ -117,7 +117,7 @@ def fix_css(content, info, ignore_css=False):
             style_text = style_text[:index]
 
         style_text = re.sub(r'color\:\#0+(;)?', '', style_text)
-        style_text = re.sub(r'\.rendered_html[a-z0-9,._ ]*\{[a-z0-9:;%.#\-\s\n]+\}', '', style_text)
+        style_text = re.sub(r'.*\.rendered_html h[1-6] {[a-z0-9:;%.#\-\s\n]+\}', '', style_text)
         return '<style type=\"text/css\">{0}</style>'.format(style_text)
 
     if ignore_css:
